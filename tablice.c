@@ -87,11 +87,11 @@ void menu6()
     printf("               *               [7] Sortowanie                     *\n");
     printf("               *               [8] Ile + ile - ile =0             *\n");
     printf("               *               [9] Przesuwa i zamiania            *\n");
-    printf("               *               ********************************   *\n");
-    printf("               *               [10] Mnozy elementy przez liczbe   *\n");
-    printf("               *               [11] Zeruje wieksze od liczby      *\n");
-    printf("               *               [12] Odwraca elementy tablicy      *\n");
-    printf("               *               [13] Dodaje 2 tablice typu int     *\n");
+//    printf("               *               ********************************   *\n");
+//    printf("               *               [10] Mnozy elementy przez liczbe   *\n");
+//    printf("               *               [11] Zeruje wieksze od liczby      *\n");
+//    printf("               *               [12] Odwraca elementy tablicy      *\n");
+//    printf("               *               [13] Dodaje 2 tablice typu int     *\n");
     printf("               *               [14] Randomowe elementy tablicy    *\n");
     printf("               *               [15] Drukowanie tablicy z zad 14   *\n");
     printf("               *               [16] Zeruje pierwsza lub druga pol *\n");
