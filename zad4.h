@@ -1,0 +1,15 @@
+#ifndef MAIN3
+#define MAIN3
+    char decyzja3='n';
+    int nr3;
+    void menu3();
+    void od_N_do_1();
+    void parzyste_mniejsze_N();
+    void N_kolejnych_nieparzystych();
+    void N_liczb_warunek();
+    void potegi_2();
+    void silnia_12();
+    void odwrotne();
+    void ciag_liczbowy();
+    void suma_N_kolejnych();
+#endif //MAIN3

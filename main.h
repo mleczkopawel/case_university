@@ -1,0 +1,21 @@
+#ifndef MAIN
+#define MAIN
+    char decyzja='n';
+    int nr;
+    void menu();
+    void suma_liczb();
+    void liniowe();
+    void kwadratowe();
+    void wypisz_licznik();
+    void nwd();
+    void podzielne_przez_3();
+    void trzy_liczby();
+    void doskonala();
+    void podzielne_przez_3_przy_n();
+    void czas();
+    void mod_x();
+    void warunek();
+    void losowe();
+    void zgadywanka();
+    void liczby_do_n_przecinek();
+#endif // MAIN

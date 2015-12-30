@@ -1,0 +1,17 @@
+#ifndef MAIN2
+#define MAIN2
+    char decyzja2='n';
+    int nr2;
+    void menu2();
+    void piec_wierszy();
+    void znak_wiecej();
+    void potega_2();
+    void calkowita_reszta();
+    void reprezentacja_binarna();
+    void suma_n_skladnikow();
+    void doskolana_z_przedzialu();
+    void suma_dwucyfrowych();
+    void suma_cyfr_naturalnej();
+    void liczby_pierwsze();
+    void zadanka();
+#endif //MAIN2
