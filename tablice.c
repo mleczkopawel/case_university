@@ -13,6 +13,11 @@ int main6(void)
     tx1=&tabx1[0];
     tx2=&tabx2[0];
     tx3=&tabx3[0];
+    tx4=&tabx4[0];
+    tx5=&tabx5[0];/*I love you very much my Honey :* <3 oo*/
+    tx6=&tabx6[0];
+    ll1=&l1;
+    ll2=&l2;
     do{
         system("cls");
         menu6();
@@ -55,9 +60,26 @@ int main6(void)
             liczba2=zad17b_tablice(liczba,t5);
             printf("Zwracana wartosc %d\n",liczba2);
         }break;
-        case 19:zad18_tablice(2,5,tx1,tx2);
-        case 20:zad19_tablice(2,5,tx1);
-        case 21:zad20_tablice(3,3,tx3);
+        case 19:zad18_tablice(2,5,tx1,tx2);break;
+        case 20:zad19_tablice(2,5,tx1);break;
+        case 21:zad20_tablice(5,5,tx5);break;
+        case 22:zad21_tablice(3,3,tx3);break;
+        case 23:zad22_tablice(3,3,tx3);break;
+        case 24:zad23_teblice(3,3,tx3);break;
+        case 25:zad24_tablice(5,5,tx5);break;
+        case 26:zad25_tablice(3,3,tx3,tx4);break;
+        case 27:zad26_tablice(3,3,tx3,tx6,tx4);break;
+        case 28:zad27_tablice(3,3,tx3);break;
+        case 29:zad28_tablice(5,5,tx5);break;
+        case 30:{
+            printf("Podaj liczbe k, k=");scanf("%d",&liczba);
+            zad30_tablice(liczba,5,5,tx5);
+        }break;
+        case 31:{
+            maxx=zad31_tablice(ll1,ll2,3,3,tx4);
+            printf("MAX=%d, wiersz %d, kolumna %d\n",maxx,l1,l2);
+        }break;
+        case 98:randtx(3,3,tx6);break;
         case 99:break;
         default:printf("NIE MA TAKIEGO ZADANIA\n");break;
         }
@@ -87,18 +109,29 @@ void menu6()
     printf("               *               [7] Sortowanie                     *\n");
     printf("               *               [8] Ile + ile - ile =0             *\n");
     printf("               *               [9] Przesuwa i zamiania            *\n");
-//    printf("               *               ********************************   *\n");
-//    printf("               *               [10] Mnozy elementy przez liczbe   *\n");
-//    printf("               *               [11] Zeruje wieksze od liczby      *\n");
-//    printf("               *               [12] Odwraca elementy tablicy      *\n");
-//    printf("               *               [13] Dodaje 2 tablice typu int     *\n");
+    printf("               *               ********************************   *\n");
+    printf("               *               [10] Mnozy elementy przez liczbe   *\n");
+    printf("               *               [11] Zeruje wieksze od liczby      *\n");
+    printf("               *               [12] Odwraca elementy tablicy      *\n");
+    printf("               *               [13] Dodaje 2 tablice typu int     *\n");
     printf("               *               [14] Randomowe elementy tablicy    *\n");
     printf("               *               [15] Drukowanie tablicy z zad 14   *\n");
     printf("               *               [16] Zeruje pierwsza lub druga pol *\n");
     printf("               *               [17] Sasiednie                     *\n");
-//    printf("               *               [18] Przepisuje dwuwymiarowe       *\n");
-//    printf("               *               [19] Odwraca kazdy wiersz tablicy  *\n");
-//    printf("               *               [9] Mnozy elementy przez liczbe    *\n");
+    printf("               *               [19] Przepisuje dwuwymiarowe       *\n");
+    printf("               *               [20] Odwraca kazdy wiersz tablicy  *\n");
+    printf("               *               *********************************  *\n");
+    printf("               *               [21] Zeruje po przekatnej          *\n");
+    printf("               *               [22] Sumuje po przekatnej          *\n");
+    printf("               *               [23] Sumuje wiersze                *\n");
+    printf("               *               [24] Jeszcze brak...               *\n");
+    printf("               *               [25] Najmniejszy i zeruje w i k    *\n");
+    printf("               *               [26] Transponuje                   *\n");
+    printf("               *               [27] Sumije dwie macierze          *\n");
+    printf("               *               [28] Mnozy elementy przez liczbe   *\n");
+    printf("               *               [29] Zeruje pod przekatna          *\n");
+    printf("               *               [30] Zeruje podzielne przez k      *\n");
+    printf("               *               [98] Randomy w NxN                 *\n");
     printf("               *               [99] Konczy program                *\n");
     printf("               *                                                  *\n");
     printf("               ****************************************************\n");
@@ -201,14 +234,14 @@ void zad5_tablice(int x, int *y)
 {
     printf("               *               [9] Przesuwa i zamiania            *\n");
     int i,temp,temp2=0;
-//    temp2=y[x-1];
+    temp2=y[x-1];
     for(i=x;i>=0;i--)
     {
         temp=y[i-1];
         y[i]=temp;
     }
-//    y[0]=temp2;
-    zamiana2(&y[0],&y[x-1]);
+//    zamiana2(&y[0],&y[x]);
+    y[0]=temp2;
     tablica1(x,y);
 }
 void zad10_tablice(int x, int y, int *z)
@@ -277,6 +310,7 @@ void zad16_tablice(int x, unsigned int *y)
 }
 void zad17a_teblice(int x, unsigned int *y)
 {
+    printf("               *               [17] Sasiednie                     *\n");
     int i,suma=0,ind;
     for(i=0;i<x;i++)
         if(y[i]+y[i+1]>suma)
@@ -294,7 +328,7 @@ int zad17b_tablice(int x, unsigned int *y)
             ret=1;
     return ret;
 }
-void wypisztx(int x, int y, int *z[x][y])
+void wypisztx(int x, int y, int z[x][y])
 {
     int i,j;
     for(i=0;i<x;i++)
@@ -304,8 +338,9 @@ void wypisztx(int x, int y, int *z[x][y])
         printf("\n");
     }
 }
-void zad18_tablice(int x, int y, int *a[x][y], int *b[x][y])
+void zad18_tablice(int x, int y, int a[x][y], int b[x][y])
 {
+    printf("               *               [19] Przepisuje dwuwymiarowe       *\n");
     wypisztx(x,y,b);
     printf("\n");
     int i,j;
@@ -314,8 +349,9 @@ void zad18_tablice(int x, int y, int *a[x][y], int *b[x][y])
             b[i][j]=a[i][j];
     wypisztx(x,y,b);
 }
-void zad19_tablice(int x, int y, int *z[x][y])
+void zad19_tablice(int x, int y, int z[x][y])
 {
+    printf("               *               [20] Odwraca kazdy wiersz tablicy  *\n");
     wypisztx(x,y,z);
     printf("\n");
     int i,j,k=y;
@@ -324,16 +360,179 @@ void zad19_tablice(int x, int y, int *z[x][y])
             zamiana2(&z[i][j],&z[i][k-1]);
     wypisztx(x,y,z);
 }
-void zad20_tablice(int x, int y, int *z[x][y])
+void zad20_tablice(int x, int y, int z[x][y])
 {
+    printf("               *               [21] Zeruje po przekatnej          *\n");
     int i,j,k=y;
     for(i=0;i<x;i++)
-        for(j=0;j<y;j++,k--)
+        for(j=0;j<y;j++)
         {
-            z[i][j]=0;
-            z[i][k-1]=0;
+            if(j==i)
+            {
+                z[i][j]=0;
+                z[i][--k]=0;
+            }
         }
     wypisztx(x,y,z);
+}
+void zad21_tablice(int x, int y, int z[x][y])
+{
+    printf("               *               [22] Sumuje po przekatnej          *\n");
+    int i,j,k=y,suma1=0,suma2=0,suma=0;
+    for(i=0;i<(x-1);i++)
+        for(j=0;j<(y-1);j++)
+        {
+            if(j==i)
+            {
+                suma1+=z[i][j];
+//                printf("Suma=%d\n",suma);
+//                z[i][j]=0;
+                if (z[i][j]==z[i][--k])
+                {
+                    suma1+=0;
+                }
+                suma2+=z[i][--k];
+//                printf("Suma=%d",suma);
+//                z[i][--k]=0;
+            }
+        }
+    k=y;
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+        {
+            if(j==i)
+            {
+//                printf("t[%d][%d]=%d",i,j,z[i][j]);
+//                suma+=z[i][j];
+//                printf("Suma=%d\n",suma);
+                z[i][j]=0;
+//                suma=suma+z[i][--k];
+//                printf("Suma=%d",suma);
+                z[i][--k]=0;
+            }
+        }
+    wypisztx(x,y,z);
+    suma=suma1+suma2;
+    printf("Suma=%d\n",suma1);
+}
+int zad22a_tablice(int x, int y, int z[x][y])
+{
+    int j,suma;
+        suma=0;
+        for(j=0;j<(y-1);j++)
+            suma+=z[x][j];
+    return suma;
+}
+void zad22_tablice(int x, int y, int z[x][y])
+{
+    printf("               *               [23] Sumuje wiersze                *\n");
+    int i,sum;
+    for(i=0;i<x;i++)
+    {
+        sum=zad22a_tablice(i,y,z);
+        printf("Suma %d wiersza wynosi %d\n",(i+1),sum);
+    }
+}
+void zad23_teblice(int x, int y, int z[x][y])
+{
+    printf("               *               [24] Jeszcze brak...               *\n");
+    printf("NIC JESZCZE NIE MA");
+}
+void zad24_tablice(int x, int y, int z[x][y])
+{
+    printf("               *               [25] Najmniejszy i zeruje w i k    *\n");
+    int i,j,k,l,tmp=100,tmp1,tmp2;
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            if(tmp>z[i][j])
+            {
+                tmp=z[i][j];
+                tmp1=i;
+                tmp2=j;
+            }
+    printf("Najmniejszym elementem jest %d\n",tmp);
+    for(k=0;k<y;k++)
+        for(l=0;l<x;l++)
+            z[tmp1][l]=0;
+    for(l=0;l<x;l++)
+        for(k=0;k<y;k++)
+            z[k][tmp2]=0;
+    wypisztx(x,y,z);
+}
+void zad25_tablice(int x, int y, int z[x][y], int zz[x][y])
+{
+    printf("               *               [26] Transponuje                   *\n");
+    printf("Przed transpozycja\n");
+    wypisztx(x,y,z);
+    int i,j;
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            zz[j][i]=z[i][j];
+    printf("Po transpozycji\n");
+    wypisztx(x,y,zz);
+}
+void randtx(int x, int y, int z[x][y])
+{
+    int i,j;
+    srand(time(NULL));
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            z[i][j]=rand()%10+1;
+//    wypisztx(x,y,z);
+}
+void zad26_tablice(int x, int y, int *z, int *zz, int *zzz)
+{
+    printf("               *               [27] Sumije dwie macierze          *\n");
+    int i,j;
+    randtx(x,y,zz);
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            *((zzz+i*sizeof(int))+j)=*((z+i*sizeof(int))+j)+*((zz+i*sizeof(int))+j);
+    wypisztx(x,y,zzz);
+}
+void zad27_tablice(int x, int y, int *z)
+{
+    printf("               *               [28] Mnozy elementy przez liczbe   *\n");
+    int i,j,a;
+    printf("Podaj liczbe przez ktora ma byc pomnozona tablica, a=");scanf("%d",&a);
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            *((z+i*sizeof(int))+j)*=a;
+    wypisztx(x,y,z);
+}
+void zad28_tablice(int x, int y, int z[x][y])
+{
+    printf("               *               [29] Zeruje pod przekatna          *\n");
+    int i,j;
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            if(i>j)
+                z[i][j]=0;
+    wypisztx(x,y,z);
+}
+void zad30_tablice(int a, int x, int y, int z[x][y])
+{
+    printf("               *               [30] Zeruje podzielne przez k      *\n");
+    int i,j;
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            if(z[i][j]%a==0)
+                z[i][j]=0;
+    wypisztx(x,y,z);
+}
+int zad31_tablice(int *a, int *b, int x, int y, int z[x][y])
+{
+    randtx(x,y,z);
+    int i,j,m=0;
+    for(i=0;i<x;i++)
+        for(j=0;j<y;j++)
+            if(z[i][j]>m)
+            {
+                m=z[i][j];
+                *a=i;
+                *b=j;
+            }
+    return m;
 }
 
 
@@ -341,15 +540,7 @@ void zad20_tablice(int x, int y, int *z[x][y])
 
 
 
-
-
-
-
-
-
-
-
-
+//zwróci max, nr wiersza i nr tablicy
 
 
 

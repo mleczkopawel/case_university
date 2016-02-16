@@ -18,4 +18,5 @@
     void losowe();
     void zgadywanka();
     void liczby_do_n_przecinek();
+    void zadanka2();
 #endif // MAIN

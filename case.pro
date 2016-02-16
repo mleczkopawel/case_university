@@ -8,7 +8,9 @@ SOURCES += main.c \
     zad4.c \
     funkcje.c \
     wskazniki.c \
-    tablice.c
+    tablice.c \
+    struktury.c \
+    struktury.c
 
 HEADERS += \
     main.h \
@@ -16,5 +18,9 @@ HEADERS += \
     zad4.h \
     funkcje.h \
     wskazniki.h \
-    tablice.h
+    tablice.h \
+    struktury.h \
+    struktury.h
+
+DISTFILES +=
 

@@ -6,6 +6,7 @@
 #include "funkcje.c"
 #include "wskazniki.c"
 #include "tablice.c"
+#include "struktury.c"
 
 int main(void)
 {
@@ -34,6 +35,8 @@ int main(void)
         case 18:main4();break;
         case 19:main5();break;
         case 20:main6();break;
+        case 21:main7();break;
+        case 98:zadanka2();break;
         default:printf("NIE MA TAKIEGO ZADANIA\n");break;
         }
         printf("Zakonczyc program?(T/N) ");scanf("%s",&decyzja);
@@ -72,6 +75,7 @@ void menu()
     printf("               *               [18] Funkcje                       *\n");
     printf("               *               [19] Wskazniki                     *\n");
     printf("               *               [20] Tablice                       *\n");
+    printf("               *               [21] Struktury                     *\n");
     printf("               *                                                  *\n");
     printf("               ****************************************************\n");
     printf("\n");
@@ -310,4 +314,16 @@ void liczby_do_n_przecinek()
         licznik++;
     }
     printf("\n");
+}
+void zadanka2()
+{
+//    int y=2,x=1;
+//    if(y) x*=-1;
+//    if(y-->x) x+=4;
+//    printf("\nx=%d y=%d",x,y);
+    int i=3,j=3, x=0;
+    while(i=--j){
+        x-=j;
+        printf("%d\n", x);
+      }
 }
